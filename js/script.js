@@ -1,5 +1,6 @@
 /******************************************
-Random Ruth Quote Generator
+Treehouse FSJS Techdegree:
+project 1 - A Random Quote Generator
 ******************************************/
 
 // For assistance: 
@@ -40,18 +41,18 @@ function printQuote () {
   //call randomRuthQuote function
   randomRuthQuote(); 
   let HTML = '';
-  HTML += '<p class="quote">' + randomQuote.Quote + '</p>';
-  HTML += '<p class="source">' + randomQuote.source + '</p>';
+  HTML += '<p class="quote">' + randomQuote.Quote;
+  HTML += '<p class="source">' + randomQuote.source;
   //a conditional statement that checks if the quote includes a year 
   if(randomQuote.year) {
   HTML += '<span class="year">' + randomQuote.year + '</span>'; 
   }
   // a conditional statement that check if the quote includes source
   if(randomQuote.citation) {
-    
   HTML += '<span class="citation">' + randomQuote.citation + '</span>';
-  console.log(randomQuote.citation);
+  '</p>';
   }
+  //displays the HTML in the quote box 
   document.getElementById('quote-box').innerHTML = HTML;
 } 
 /***
