@@ -11,6 +11,8 @@ project 1 - A Random Quote Generator
  * create an array of quotes 
 ***/
 let randomQuote;
+const quoteButton = document.getElementById('load-quote');
+//create a variable that holds an array of quotes with sources and citation at least one has a tag
 const ruthQuotes = [
   {Quote: "Don't be distracted by emotions like anger, envy, resentment. These just zap energy and waste time",
 source: "Ruth Bader Ginsburg", citation: "My Own Words"},
@@ -21,9 +23,11 @@ year: 2001},
 source: "Ruther Bader Ginsburg", citation: "Luncheon at Harvard",
 year: 2015},
 {Quote:"If you want to be a true professional, you must do something outside yourself.",
-source: "Ruther Bader Ginsburg", citation:"My own words"}
+source: "Ruther Bader Ginsburg", citation:"My own words", },
+{Quote: "Real change, enduring change, happens one step at a time.", 
+source: "Ruth Bader Ginsburg"}
 ];
-
+//not sure how to create a tag. 
 
 /***
  *  a function that pulls the above quotes at random
@@ -38,9 +42,9 @@ function randomRuthQuote () {
  * a `printQuote` function that selects each quote to display
 ***/
 function printQuote () {
+  let HTML = '';
   //call randomRuthQuote function
   randomRuthQuote(); 
-  let HTML = '';
   HTML += '<p class="quote">' + randomQuote.Quote;
   HTML += '<p class="source">' + randomQuote.source;
   //a conditional statement that checks if the quote includes a year 
@@ -55,6 +59,26 @@ function printQuote () {
   //displays the HTML in the quote box 
   document.getElementById('quote-box').innerHTML = HTML;
 } 
+//creating a funtion that changes the background color when the button is clicked
+
+quoteButton.addEventListener('click', () => {
+  let html;
+  let blue;
+  let green;
+  let red; 
+  let randomColor;
+  let randomRBB;
+  let i;
+  const quoteBox = document.querySelector('.quote-box');
+  const randomValue = () => Math.floor(Math.random() * 256);
+  for( i = 1; i <= ruthQuotes.length; i++) {
+    red = randomValue();
+    blue = randomValue();
+    green = randomValue();
+    randomRGB = `rgb(${red}, ${blue}, ${green})`;
+  }
+  quoteBox.style.backgroundColor = randomRGB;
+}); 
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
