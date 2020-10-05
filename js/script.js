@@ -45,7 +45,9 @@ function printQuote () {
   let HTML = '';
   //call randomRuthQuote function
   randomRuthQuote(); 
+  //display the quote from the array ruthQuotes using the randomRuthQuote function
   HTML += '<p class="quote">' + randomQuote.Quote;
+  //display the source from the array ruthquotes using the randomRuthQuote function
   HTML += '<p class="source">' + randomQuote.source;
   //a conditional statement that checks if the quote includes a year 
   if(randomQuote.year) {
@@ -79,6 +81,15 @@ quoteButton.addEventListener('click', () => {
   }
   quoteBox.style.backgroundColor = randomRGB;
 }); 
+/* 
+create a variable that holds the setInterval timer for 20 seconds
+variable intervalId = window.setInterval(timer, 20000)
+//creating a a function that automatically updates with a 2 second timing function
+function changeQuote() {
+  intervalId = window.setInterval(printQuote, 20000);
+
+}
+  */
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
