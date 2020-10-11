@@ -81,18 +81,20 @@ function printQuote () {
     }
     quoteBox.style.backgroundColor = randomRGB;
   }
-  console.log(changeBackgroundColor());
-/* create a variable that holds the setInterval timer for 20 seconds 
-let timer = setInterval(printQuote, 10000);
+//create a variable that holds the setInterval timer for 20 seconds 
+let timeOut = 10000;
+let timer;
 //creating a a function that automatically updates with a 2 second timing function
 function startTimer() {
-  timer = setInterval(printQuote, 10000);
+  timer = window.setInterval(printQuote, timeOut);
 }
 function endTimer() {
-  clearInterval(timer);
+  window.clearInterval(timer);
+  timer = setInterval(printQuote, timeOut);
 }
-/***
+startTimer();/***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", endTimer,false);
