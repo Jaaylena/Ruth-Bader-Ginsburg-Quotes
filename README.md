@@ -1,2 +1,2 @@
 # Ruth-Bader-Ginsburg-Quotes
-reworking the random quote generator with tags dedicated to Ruth Bader Ginsburg
+a rework of the random quote generator dedicated to Ruth Bader Ginsburg background changes colors with a timer 
