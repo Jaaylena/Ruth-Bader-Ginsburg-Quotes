@@ -70,10 +70,9 @@ function printQuote () {
     let red; 
     let randomColor;
     let randomRBB;
-    let i;
     const quoteBox = document.querySelector('.quote-box');
     const randomValue = () => Math.floor(Math.random() * 256);
-    for( i = 1; i <= ruthQuotes.length; i++) {
+    for(let i = 1; i <= ruthQuotes.length; i++) {
       red = randomValue();
       blue = randomValue();
       green = randomValue();
