@@ -64,22 +64,15 @@ function printQuote () {
 } 
   //creating a funtion that changes the background color when the button is clicked
   function changeBackgroundColor(){
-    let html;
-    let blue;
-    let green;
-    let red; 
-    let randomColor;
-    let randomRBB;
+    let randomRGB = [];
     const quoteBox = document.querySelector('.quote-box');
-    const randomValue = () => Math.floor(Math.random() * 256);
-    for(let i = 1; i <= ruthQuotes.length; i++) {
-      red = randomValue();
-      blue = randomValue();
-      green = randomValue();
-      randomRGB = `rgb(${red}, ${blue}, ${green})`;
+    for(let i = 0; i < 3; i++) {
+      let randomValue = Math.floor(Math.random() * 256);
+      randomRGB.push(randomValue);
     }
-    quoteBox.style.backgroundColor = randomRGB;
+    quoteBox.style.backgroundColor = `rgb(${randomRGB[0]}, ${randomRGB[1]}, ${randomRGB[2]})`
   }
+
 //create a variable that holds the setInterval timer for 20 seconds 
 let timeOut = 10000;
 let timer;
