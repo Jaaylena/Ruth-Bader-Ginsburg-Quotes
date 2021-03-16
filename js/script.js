@@ -73,6 +73,10 @@ function printQuote () {
     quoteBox.style.backgroundColor = `rgb(${randomRGB[0]}, ${randomRGB[1]}, ${randomRGB[2]})`
   }
 
+  function randomImg() {
+    
+  }
+
 //create a variable that holds the setInterval timer for 20 seconds 
 let timeOut = 10000;
 let timer;
