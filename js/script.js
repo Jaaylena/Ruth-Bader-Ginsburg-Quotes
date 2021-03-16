@@ -7,8 +7,8 @@ project 1 - A Random Quote Generator
   // Check the "Project Resources" section of the project instructions
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
  
-  window.onload = choosePic;
-  const myPix = new Array("images/I dissent.jpg", "images/images (1).jpg", 
+  
+  const myPix = new Array("images/then_and_now.jpg", "images/images (1).jpg", 
                     "images/images (2).jpg", "images/images.jpg", "images/RGB Real.jpg");
 /*** 
  * create an array of quotes 
@@ -40,6 +40,22 @@ function randomRuthQuote () {
     return randomQuote;
 }
 
+ //creating a funtion that changes the background color when the button is clicked
+ function changeBackgroundColor(){
+  let randomRGB = [];
+  const quoteBox = document.querySelector('.quote-box');
+  for(let i = 0; i < 3; i++) {
+    let randomValue = Math.floor(Math.random() * 256);
+    randomRGB.push(randomValue);
+  }
+  quoteBox.style.backgroundColor = `rgb(${randomRGB[0]}, ${randomRGB[1]}, ${randomRGB[2]})`
+}
+//function that selects a random picture with each quote 
+function choosePic() {
+  let randomPic = Math.floor(Math.random() * myPix.length);
+  document.getElementById('myPicture').src = myPix[randomPic];
+}
+
 /***
  * a `printQuote` function that selects each quote to display
 ***/
@@ -47,6 +63,7 @@ function printQuote () {
   let HTML = '';
   //call randomRuthQuote function
   randomRuthQuote(); 
+  HTML += `<img src="${choosePic}" id="myPicture">`;
   //display the quote from the array ruthQuotes using the randomRuthQuote function
   HTML += `<p class="quote">${randomQuote.Quote}`;
   //display the source from the array ruthquotes using the randomRuthQuote function
@@ -67,22 +84,9 @@ function printQuote () {
   //displays the HTML in the quote box 
   document.getElementById('quote-box').innerHTML = HTML;
   changeBackgroundColor();
+  choosePic();
 } 
-  //creating a funtion that changes the background color when the button is clicked
-  function changeBackgroundColor(){
-    let randomRGB = [];
-    const quoteBox = document.querySelector('.quote-box');
-    for(let i = 0; i < 3; i++) {
-      let randomValue = Math.floor(Math.random() * 256);
-      randomRGB.push(randomValue);
-    }
-    quoteBox.style.backgroundColor = `rgb(${randomRGB[0]}, ${randomRGB[1]}, ${randomRGB[2]})`
-  }
-
-  function choosePic() {
-    console.log(myPix);
-  }
-
+ 
 //create a variable that holds the setInterval timer for 20 seconds 
 let timeOut = 10000;
 let timer;
