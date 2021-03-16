@@ -25,9 +25,8 @@ year: 2015},
 {Quote:"If you want to be a true professional, you must do something outside yourself.",
 source: "Ruther Bader Ginsburg", citation:"My own words", },
 {Quote: "Real change, enduring change, happens one step at a time.", 
-source: "Ruth Bader Ginsburg"}
+source: "Ruth Bader Ginsburg", tag: " Justice"}
 ];
-//not sure how to create a tag. 
 
 /***
  *  a function that pulls the above quotes at random
@@ -58,6 +57,10 @@ function printQuote () {
   HTML += '<span class="citation">' + randomQuote.citation + '</span>';
   '</p>';
   }
+
+  if(randomQuote.tag){
+    HTML += `<a href="https://www.supremecourt.gov/about/biographyginsburg.aspx">${randomQuote.tag} </a>`;
+  }
   //displays the HTML in the quote box 
   document.getElementById('quote-box').innerHTML = HTML;
   changeBackgroundColor();
@@ -74,7 +77,7 @@ function printQuote () {
   }
 
   function randomImg() {
-    
+
   }
 
 //create a variable that holds the setInterval timer for 20 seconds 
