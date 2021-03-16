@@ -6,7 +6,10 @@ project 1 - A Random Quote Generator
 // For assistance: 
   // Check the "Project Resources" section of the project instructions
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
+ 
+  window.onload = choosePic;
+  const myPix = new Array("images/I dissent.jpg", "images/images (1).jpg", 
+                    "images/images (2).jpg", "images/images.jpg", "images/RGB Real.jpg");
 /*** 
  * create an array of quotes 
 ***/
@@ -25,7 +28,7 @@ year: 2015},
 {Quote:"If you want to be a true professional, you must do something outside yourself.",
 source: "Ruther Bader Ginsburg", citation:"My own words", },
 {Quote: "Real change, enduring change, happens one step at a time.", 
-source: "Ruth Bader Ginsburg", tag: " Justice"}
+source: "Ruth Bader Ginsburg ", tag: "(Justice)"}
 ];
 
 /***
@@ -45,16 +48,16 @@ function printQuote () {
   //call randomRuthQuote function
   randomRuthQuote(); 
   //display the quote from the array ruthQuotes using the randomRuthQuote function
-  HTML += '<p class="quote">' + randomQuote.Quote;
+  HTML += `<p class="quote">${randomQuote.Quote}`;
   //display the source from the array ruthquotes using the randomRuthQuote function
-  HTML += '<p class="source">' + randomQuote.source;
+  HTML += `<p class="source">${randomQuote.source}`;
   //a conditional statement that checks if the quote includes a year 
   if(randomQuote.year) {
-  HTML += '<span class="year">' + randomQuote.year + '</span>'; 
+  HTML += `<span class="year">${randomQuote.year}</span>`; 
   }
   // a conditional statement that check if the quote includes source
   if(randomQuote.citation) {
-  HTML += '<span class="citation">' + randomQuote.citation + '</span>';
+  HTML += `<span class="citation">${randomQuote.citation}</span>`;
   '</p>';
   }
 
@@ -76,8 +79,8 @@ function printQuote () {
     quoteBox.style.backgroundColor = `rgb(${randomRGB[0]}, ${randomRGB[1]}, ${randomRGB[2]})`
   }
 
-  function randomImg() {
-
+  function choosePic() {
+    console.log(myPix);
   }
 
 //create a variable that holds the setInterval timer for 20 seconds 
