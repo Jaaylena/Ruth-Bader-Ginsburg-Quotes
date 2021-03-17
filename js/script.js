@@ -98,9 +98,10 @@ function endTimer() {
   window.clearInterval(timer);
   timer = setInterval(printQuote, timeOut);
 }
-startTimer();/***
+startTimer();
+/***
  * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
+ 
 ***/
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 document.getElementById('load-quote').addEventListener("click", endTimer,false);
