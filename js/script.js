@@ -63,7 +63,6 @@ function printQuote () {
   let HTML = '';
   //call randomRuthQuote function
   randomRuthQuote(); 
-  HTML += `<img src="${choosePic}" id="myPicture">`;
   //display the quote from the array ruthQuotes using the randomRuthQuote function
   HTML += `<p class="quote">${randomQuote.Quote}`;
   //display the source from the array ruthquotes using the randomRuthQuote function
