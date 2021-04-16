@@ -6,4 +6,4 @@ Added images to each quote that changes as randomly as the quotes.
 changing background colors 
 
 # Live Link
- [Ruth Bader GinsBurg quotes](https://raw.githack.com/JelenaMF/Ruth-Bader-Ginsburg-Quotes/main/index.html)
+ [Ruth Bader GinsBurg quotes](https://jelenamf.github.io/Ruth-Bader-Ginsburg-Quotes/)
